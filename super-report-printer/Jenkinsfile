@@ -10,13 +10,13 @@ pipeline {
             defaultContainer 'node'
             yaml '''
             spec:
-            containers:
-                - name: node
-                image: node:16.15-alpine3.16
-                command: ["sleep", "infinity"]
-                - name: python
-                image: python:3.10-alpine3.16
-                command: ["sleep", "infinity"]
+                containers:
+                    - name: node
+                    image: node:16.15-alpine3.16
+                    command: ["sleep", "infinity"]
+                    - name: python
+                    image: python:3.10-alpine3.16
+                    command: ["sleep", "infinity"]
             '''
         }
     }
