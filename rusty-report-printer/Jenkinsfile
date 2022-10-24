@@ -6,15 +6,16 @@ import groovy.transform.Field
 pipeline {
     agent {
         kubernetes {
+            defaultContainer 'rust'
             yaml '''
               spec:
                 containers:
                     - name: rust
-                    image: rust:1.61-alpine3.15
-                    command: ["sleep", "infinity"]
+                        image: rust:1.61-alpine3.15
+                        command: ["sleep", "infinity"]
                     - name: node
-                    image: node:16.15-alpine3.16
-                    command: ["sleep", "infinity"]
+                        image: node:16.15-alpine3.16
+                        command: ["sleep", "infinity"]
             '''
         }
     }
